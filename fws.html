@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Simple HTML Program</title>
+  <style>
+    /* Minimal, clean styling */
+    :root { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+    body { margin: 0; background: #f6f7f9; color: #111; }
+    .container { max-width: 720px; margin: 4rem auto; padding: 1.5rem; background: #fff; border-radius: 16px; box-shadow: 0 10px 25px rgba(0,0,0,.05); }
+    h1 { margin-top: 0; }
+    .row { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; }
+    button { padding: .7rem 1rem; border: 0; border-radius: 10px; cursor: pointer; font-weight: 600; }
+    button.primary { background: #0ea5e9; color: white; }
+    button.secondary { background: #e5e7eb; }
+    .card { padding: 1rem; border: 1px solid #e5e7eb; border-radius: 12px; background: #fafafa; }
+    footer { margin-top: 2rem; font-size: .9rem; color: #555; }
+    code { background: #f1f5f9; padding: .15rem .35rem; border-radius: 6px; }
+  </style>
+</head>
+<body>
+  <main class="container" role="main">
+    <h1>👋 Hello, World!</h1>
+    <p>This is a <strong>simple HTML program</strong> with a tiny bit of CSS and JavaScript. Click the buttons to see it in action.</p>
+
+    <section class="card" aria-live="polite">
+      <h2>Interactive Demo</h2>
+      <p id="message">Welcome! Press a button below.</p>
+      <div class="row">
+        <button class="primary" id="greetBtn">Greet</button>
+        <button class="secondary" id="timeBtn">Show Time</button>
+        <button class="secondary" id="resetBtn" title="Reset the message">Reset</button>
+      </div>
+    </section>
+
+    <section>
+      <h2>What’s in this file?</h2>
+      <ul>
+        <li>Semantic HTML: <code>&lt;main&gt;</code>, <code>&lt;section&gt;</code>, headings, and buttons.</li>
+        <li>Inline CSS for quick styling (see the <code>&lt;style&gt;</code> block).</li>
+        <li>A tiny JavaScript snippet to handle button clicks.</li>
+      </ul>
+    </section>
+
+    <footer>
+      Made with plain HTML, CSS, and JS. You can save this file as <code>index.html</code> and open it in your browser.
+    </footer>
+  </main>
+
+  <script>
+    // Very small JavaScript to add interactivity
+    const message = document.getElementById('message');
+    const greetBtn = document.getElementById('greetBtn');
+    const timeBtn = document.getElementById('timeBtn');
+    const resetBtn = document.getElementById('resetBtn');
+
+    greetBtn.addEventListener('click', () => {
+      message.textContent = 'Hello there! Hope you\'re having a great day ✨';
+    });
+
+    timeBtn.addEventListener('click', () => {
+      const now = new Date();
+      message.textContent = `Current time: ${now.toLocaleString()}`;
+    });
+
+    resetBtn.addEventListener('click', () => {
+      message.textContent = 'Welcome! Press a button below.';
+    });
+  </script>
+</body>
+</html>
